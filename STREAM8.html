@@ -150,13 +150,14 @@ div {
 <div type="topheader">
   <h1 style="style">&nbsp;</h1>
 	<h1 style="color: white; font-weight: 500; font-size: 45px"><strong>STREAM</strong></h1>
-		<input id="searchbar" type="text"><script type="text/javascript">
+		<input name="searchbar" id="searchbar" type="text"><script type="text/javascript">
 	var input = document.getElementById("searchbar");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        alert("location.replace = 'https://api.streamsearch.cf/?q=?location=gbr' + document.GetElementByID('searchbar')");
-    }
+var input = document.getElementById("searchbar").value;
+     window.location = "https://streamcompany.github.io/stream/gbr?q=" + input.value;
+}
 });</script></input>
 		  <p height="0">&nbsp;</p>
 </div>
