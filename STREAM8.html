@@ -156,15 +156,15 @@ input.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
 var input = document.getElementById("searchbar").value;
-     window.location = "https://streamcompany.github.io/stream/gbr?q=" + input.value;
+     window.location = "https://streamcompany.github.io/stream/gbr?q=" + input;
 }
 });</script></input>
-		  <p height="0">&nbsp;</p>
+		  <p height="0"></p>
 </div>
 	  <div type="card" width="20%">
-	    <iframe id="forecast_embed" frameborder="0" height="200" width="100%" src="https://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=London&color=#00aaff&font=Rubik&units=uk"></iframe>
+	    <iframe id="forecast_embed" frameborder="0" height="200" width="100%" scrolling="no" style="overflow: hidden;" src="https://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=London&color=#00aaff&font=Rubik&units=uk"></iframe>
 	  </div>
-	  <div type="card" width="20%" style="text-align: center"><iframe style="font-family: 'Rubik', sans serif" id="phonead" frameborder="0" height="200" width="100%" src="images/phone.html">
+	  <div type="card" width="20%" style="text-align: center;"><iframe scrolling="no" style="font-family: 'Rubik', sans serif; overflow: hidden" id="phonead" frameborder="0" height="200" width="100%" src="images/phone.html">
 	  </div>
 			 </blockquote>
   </blockquote>
