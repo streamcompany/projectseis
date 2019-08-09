@@ -146,13 +146,19 @@ div {
 			font: bold;
 			text
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
 </style>
 </head>
 <body>	
 <div type="topheader">
   <h1 style="style">&nbsp;</h1>
 	<h1 style="color: white; font-weight: 500; font-size: 45px; text-align:center"><strong>STREAM</strong></h1>
-		<input name="searchbar" style="font-family: 'Rubik', sans serrif" id="searchbar" type="text"><script type="text/javascript">
+	<div class="header" id="myHeader">	
+	<input name="searchbar" style="font-family: 'Rubik', sans serrif" id="searchbar" type="text"><script type="text/javascript">
 	var input = document.getElementById("searchbar");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -161,9 +167,10 @@ var input = document.getElementById("searchbar").value;
      window.location = "https://streamcompany.github.io/stream/gbr?q=" + input;
 }
 });</script></input>
+	</div>
 		  <p height="0"></p>
 </div>
-	<div width=100% height="100%" type="cardbackg" style="background-color: white">
+	<div class="content" width=100% height="100%" id="content" type="cardbackg">
 	  <div type="card" width="100%">
 	    <iframe id="forecast_embed" frameborder="0" height="200" width="100%" scrolling="no" style="overflow: hidden;" src="https://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=London&color=#00aaff&font=Rubik&units=uk"></iframe>
 	  </div>
@@ -171,6 +178,23 @@ var input = document.getElementById("searchbar").value;
 	  <div type="card" width="100%" style="text-align: center;"><iframe scrolling="no" style="font-family: 'Rubik', sans serif; overflow: hidden" id="phonead" frameborder="0" height="200" width="100%" src="images/phone.html">
 	  </div>
 		</div>
+		<script type="text/javascript">// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("myHeader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}</script>
 	</body>
 </html>
 
