@@ -12,11 +12,10 @@
 		text-align: center;
 			position: sticky;
 		top: 0;
-		height:90vh;
 		z-index: 999;
 	}
 	body{
-		height: 100vh;
+		
 		margin:0;
 		padding: 0;
 				 background-image: linear-gradient(to top right, #00B9FF , #00BF40);
@@ -27,13 +26,20 @@
 <body>
 	<div type="Main">
 	  <p style="opacity: 0">.</p>
-	<h1 style="text-align: center; font-family: 'Rubik', Sans-Serif; font-weight: 700; position: sticky">STREAM</h1>
-		<div style="padding-top: 7px; position: sticky;
-					  top: 0;">
-		<input style="border-radius: 10px; width: 90%; height: 30px; border: 0; opacity: 0.9; box-shadow: 0px 2px 5px 1px gray; font-family: 'Rubik', Sans Serif; font-weight: 400; padding-left: 10px; padding-right: 10px;"></input></div>
-	<p style="height: 55vh; position: sticky">&nbsp;</p>
-	</div>
+	<h1 style="text-align: center; font-family: 'Rubik', Sans-Serif; font-weight: 700; color: white">STREAM</h1>
+		<div style="padding-top: 7px;">
+		<input id="searchbar" style="border-radius: 10px; width: 90%; height: 30px; border: 0; opacity: 0.9; box-shadow: 0px 2px 5px 1px gray; font-family: 'Rubik', Sans Serif; font-weight: 400; padding-left: 10px; padding-right: 10px;"></input><script type="text/javascript">
+	var input = document.getElementById("searchbar");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+var input = document.getElementById("searchbar").value;
+     window.location = "https://streamcompany.github.io/stream/gbr?q=" + input;
+}
+});</script></div>
+	<p style="height: 67vh;">&nbsp;</p>
 	<p style="text-align: center; color: white; font-family:'Rubik', Sans Serif; font-weight: 700">Swipe up for the Overview</p>
-	<div style="background-color: white; height: 100%; z-index: 9999; top: 1;"></div>
+	</div>
+	<div style="background-color: white; height: 100vh; z-index: 9999; top: 1; position: relative; box-shadow: 0px -2px 5px 1px gray;"></div>
 </body>
 </html>
