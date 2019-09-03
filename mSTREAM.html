@@ -11,6 +11,7 @@
 			padding: 0;
 		text-align: center;
 			position: sticky;
+		position: -webkit-sticky;
 		top: 0;
 		z-index: 999;
 	}
@@ -18,6 +19,7 @@
 		
 		margin:0;
 		padding: 0;
+		background-image: #00B9FF;
 				 background-image: linear-gradient(to top right, #00B9FF , #00BF40);
 		background-repeat: no-repeat;
 			margin: auto;
@@ -28,7 +30,7 @@
 	  <p style="opacity: 0">.</p>
 	<h1 style="text-align: center; font-family: 'Rubik', Sans-Serif; font-weight: 700; color: white">STREAM</h1>
 		<div style="padding-top: 7px;">
-		<input id="searchbar" style="border-radius: 10px; width: 90%; height: 30px; border: 0; opacity: 0.9; box-shadow: 0px 2px 5px 1px gray; font-family: 'Rubik', Sans Serif; font-weight: 400; padding-left: 10px; padding-right: 10px;"></input><script type="text/javascript">
+		<input id="searchbar" style="border-radius: 10px; width: 90%; height: 30px; border: 0; opacity: 0.9; box-shadow: 0px 2px 5px 1px gray; font-family: 'Rubik', Sans Serif; font-weight: 400; padding-left: 10px; padding-right: 10px;" href=""></input><script type="text/javascript">
 	var input = document.getElementById("searchbar");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -36,10 +38,41 @@ input.addEventListener("keyup", function(event) {
 var input = document.getElementById("searchbar").value;
      window.location = "https://streamcompany.github.io/stream/gbr?q=" + input;
 }
-});</script></div>
-	<p style="height: 67vh;">&nbsp;</p>
-	<p style="text-align: center; color: white; font-family:'Rubik', Sans Serif; font-weight: 700">Swipe up for the Overview</p>
+});</script><script type="text/javascript">// Set a variable for our button element.
+const scrollToTopButton = document.getElementById('searchbar');
+  // Get the current scroll value
+  let y = window.scrollY;
+ 
+
+window.addEventListener("scroll", scrollFunc);
+
+const scrollToTop = () => {
+  // Let's set a variable for the number of pixels we are from the top of the document.
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  
+  // If that number is greater than 0, we'll scroll back to 0, or the top of the document.
+  // We'll also animate that scroll with requestAnimationFrame:
+  // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    // ScrollTo takes an x and a y coordinate.
+    // Increase the '10' value to get a smoother/slower scroll!
+    window.scrollTo(0, c - c / 10);
+  }
+};
+
+// When the button is clicked, run our ScrolltoTop function above!
+scrollToTopButton.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
+}</script></div>
+	<p style="height: 60vh;">&nbsp;</p>
+	<p style="height: 10vh; text-align: center; color: white; font-family:'Rubik', Sans Serif; font-weight: 700">Swipe up for the Overview</p>
 	</div>
-	<div style="background-color: white; height: 100vh; z-index: 9999; top: 1; position: relative; box-shadow: 0px -2px 5px 1px gray;"></div>
+	<div style="background-color: white; height: 100vh; z-index: 9999; top: 1; position: relative; box-shadow: 0px -2px 5px 1px gray;">
+	<h2 style="font-family: 'Rubik', Sans Serif; padding-top: 15px; text-align: center;">Today's Overview</h2>
+		<iframe id="forecast_embed" scrolling="no" style="overflow: hidden;" src="https://forecast.io/embed/#lat=51.50642&amp;lon=-0.12721&amp;name=London&amp;color=#00aaff&amp;font=Rubik&amp;units=uk" width="100%" height="200" frameborder="0"></iframe>
+				<iframe id="forecast_embed" scrolling="no" style="overflow: hidden;" src="https://streamcompany.github.io/projectseis/images/beaker.html" width="100%" height="200" frameborder="0"></iframe>
+	</div>
 </body>
 </html>
